@@ -21,4 +21,4 @@ def table(lines; cols; txt; fmt):
     [ txt.empty ] + cols,
     lines[] as $line
     | [ $line ] + [ cols[] as $col | .[$line][$col] // [ txt.empty ] | join(txt.space) ];
-  "#" + txt.title, (table | fmt);
+  if txt | has("title") then "#" + txt.title else "" end, (table | fmt);
