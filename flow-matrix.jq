@@ -32,6 +32,6 @@ def txt: { empty: ".", space: "," };
 def txt_xy: head_xy + txt;
 def txt_yx: head_yx + txt;
 
-def table_xx(set):      table(set;  set;  false; txt_xy; @tsv);
-def table_xy(from; to): table(from; to;   false; txt_xy; @tsv);
-def table_yx(from; to): table(to;   from; true;  txt_yx; @tsv);
+def table_xx(set):      index | table(set;  set;  false; txt_xy; @tsv);
+def table_xy(from; to): index | table(from; to;   false; txt_xy; @tsv);
+def table_yx(from; to): index | table(to;   from; true;  txt_yx; @tsv);
