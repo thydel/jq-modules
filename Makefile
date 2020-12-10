@@ -5,7 +5,7 @@ Makefile:;
 local := /usr/local
 libjq := $(local)/lib/jq
 
-libs := Set flow-matrix
+libs := Set flow-matrix local
 
 installed := $(libs:%=$(libjq)/%.jq)
 $(installed): $(libjq)/%.jq : %.jq; install $< $@
